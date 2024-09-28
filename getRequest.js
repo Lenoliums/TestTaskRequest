@@ -8,10 +8,10 @@ async function getPetById(id) {
       });
   
       if (!response.ok) {
-        throw new Error(`Error! status: ${response.status}`);
+        throw new Error(`Error status: ${response.status}`);
       }
 
-      const result = (await response.json());
+      const result = await response.json();
       console.log('result is: ', JSON.stringify(result));
       return result;
     } catch (error) {
